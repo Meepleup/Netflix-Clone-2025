@@ -1,28 +1,34 @@
 import React, { useEffect, useState } from "react";
-import axios from '../../utils/axios';
-import requests from '../../utils/requests';
+import axios from '../../utils/axios.jsx';
+import requests from '../../utils/requests.jsx';
 import "./Banner.css";
 
-
 const Banner = () => {
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(requests.fetchNetflixOriginals);
-      const randomMovie =
-        request.data.results[
-          Math.floor(Math.random() * request.data.results.length)
-        ];
-      setMovie(randomMovie);
-      return request;
+      try {
+        const request = await axios.get(requests.fetchNetflixOriginals);
+        const randomMovie =
+          request.data.results[
+            Math.floor(Math.random() * request.data.results.length)
+          ];
+        setMovie(randomMovie);
+        setLoading(false);
+      } catch (error) {
+        console.error("Failed to fetch movie data:", error);
+      }
     }
     fetchData();
   }, []);
 
   const truncate = (text, n) => {
-    return text?.length > n ? text.substr(0, n - 1) + "..." : text;
+    return text?.length > n ? text.slice(0, n) + "..." : text;
   };
+
+  if (loading) return <div className="banner_loading">Loading...</div>;
 
   return (
     <header
@@ -33,14 +39,16 @@ const Banner = () => {
         backgroundPosition: "center",
       }}
     >
+      <div className="banner_overlay"></div>
+
       <div className="banner_contents">
         <h1 className="banner_title">
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
 
         <div className="banner_buttons">
-          <button className="banner_button">Play</button>
-          <button className="banner_button">My List</button>
+          <button className="banner_button" aria-label={`Play ${movie?.title}`}>Play</button>
+          <button className="banner_button" aria-label={`Add ${movie?.title} to My List`}>My List</button>
         </div>
 
         <h1 className="banner_description">

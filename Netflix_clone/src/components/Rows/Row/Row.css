@@ -1,0 +1,77 @@
+/* Row Container */
+.Row {
+  color: white;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+/* Title */
+.Row h2 {
+  margin-left: 5px;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+/* Movie list scrollbar container */
+.Row__posters {
+  display: flex;
+  gap: 10px;
+  padding: 20px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar */
+.Row__posters::-webkit-scrollbar {
+  display: none;
+}
+
+/* Movie image */
+.Row__poster {
+  max-height: 110px;
+  object-fit: contain;
+  border-radius: 4px;
+  transition: transform 300ms;
+  cursor: pointer;
+  width: 160px;
+}
+
+.Row__poster:hover {
+  transform: scale(1.09);
+}
+
+/* Large Row (e.g., Netflix Originals) */
+.Row__posterLarge {
+  max-height: 250px;
+  width: 170px;
+}
+
+.Row__posterLarge:hover {
+  transform: scale(1.13);
+}
+
+/* YouTube Trailer Box */
+.Row__youtube {
+  margin-top: 20px;
+}
+
+/* Loading State */
+.Row_loading {
+  color: #ccc;
+  padding: 40px 0;
+  font-size: 1.2rem;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .Row__poster {
+    max-height: 80px;
+    width: 120px;
+  }
+
+  .Row__posterLarge {
+    max-height: 180px;
+    width: 130px;
+  }
+}

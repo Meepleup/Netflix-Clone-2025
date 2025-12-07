@@ -1,0 +1,22 @@
+.rowList {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 40px;
+}
+
+/* Spacing between rows */
+.rowList > div {
+  margin-bottom: 40px;
+}
+
+/* Make spacing tighter on mobile */
+@media (max-width: 768px) {
+  .rowList {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .rowList > div {
+    margin-bottom: 30px;
+  }
+}
