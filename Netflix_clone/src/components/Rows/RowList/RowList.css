@@ -1,22 +1,24 @@
+/* Container for all rows */
 .rowList {
   padding-left: 20px;
   padding-right: 20px;
-  margin-top: 40px;
+  padding-top: 40px;
 }
 
-/* Spacing between rows */
+/* Spacing between row sections */
 .rowList > div {
   margin-bottom: 40px;
 }
 
-/* Make spacing tighter on mobile */
+/* Mobile adjustments */
 @media (max-width: 768px) {
   .rowList {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 25px;
   }
 
   .rowList > div {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
 }

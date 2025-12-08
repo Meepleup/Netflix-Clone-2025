@@ -4,27 +4,21 @@ import requests from "../../../utils/requests.jsx";
 import "./RowList.css";
 
 function RowList() {
-  const rows = [
-    { title: "Netflix Originals", fetchUrl: requests.fetchNetflixOriginals, isLargeRow: true },
-    { title: "Trending Now", fetchUrl: requests.fetchTrending },
-    { title: "Top Rated", fetchUrl: requests.fetchTopRated },
-    { title: "Action Movies", fetchUrl: requests.fetchActionMovies },
-    { title: "Comedy Movies", fetchUrl: requests.fetchComedyMovies },
-    { title: "Horror Movies", fetchUrl: requests.fetchHorrorMovies },
-    { title: "Romance Movies", fetchUrl: requests.fetchRomanceMovies },
-    { title: "Documentaries", fetchUrl: requests.fetchDocumentaries },
-  ];
-
   return (
     <div className="rowList">
-      {rows.map((row) => (
-        <Row
-          key={row.title}
-          title={row.title}
-          fetchUrl={row.fetchUrl}
-          isLargeRow={row.isLargeRow}
-        />
-      ))}
+      <Row 
+        title="Netflix Originals"
+        fetchUrl={requests.fetchNetflixOriginals}
+        isLargeRow={true}
+      />
+
+      <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
+      <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
+      <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
+      <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
+      <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
+      <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
+      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
     </div>
   );
 }
