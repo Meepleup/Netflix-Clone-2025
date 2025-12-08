@@ -2,7 +2,7 @@
     width: 100%;
     background-color: #141414;
     color: #757575;
-    padding: 40px 0;
+    padding: 50px 0;
     font-size: 14px;
 }
 .footer_inner_container {
@@ -16,27 +16,30 @@
 .footer_icons {
     display: flex;
     gap: 20px;
-    font-size: 24px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #757575;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
-.footer_lists {
+.footer_links {
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 50px;
     flex-wrap: wrap;
 }
-.footer_lists div {
+.footer_links div {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.footer_lists div li {
+.footer_links div li {
     list-style: none;
     cursor: pointer;
     transition: color 0.2s ease;
 }
-.footer_lists div li:hover {
+.footer_links div li:hover {
     color: #e50914; /* Netflix red on hover */
 }
 .footer_bottom_text {

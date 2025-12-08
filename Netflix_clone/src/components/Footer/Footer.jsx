@@ -15,7 +15,7 @@ function Footer() {
           <XIcon/>
           <YouTubeIcon/>
         </div>
-        <div className='footer_lists'>
+        <div className='footer_links'>
           <div>
             <ul>
               <li>Audio Description</li>
@@ -45,8 +45,8 @@ function Footer() {
             </ul>
           </div>
           </div>
-        <div className='footer_text'>
-          <p>Netflix GY</p>
+        <div className='footer_country'>
+          <p>Netflix Germany</p>
         </div>
         <div className='copy-write'>
           <p>© 1997-2024 Netflix, Inc.</p>
